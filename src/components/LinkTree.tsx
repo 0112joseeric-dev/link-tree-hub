@@ -1,34 +1,20 @@
-import { Send, Instagram, MessageCircle, Heart, Camera } from "lucide-react";
+import { Send } from "lucide-react";
 import LinkButton from "./LinkButton";
 import backgroundImage from "@/assets/background.jpg";
+import profileImage from "@/assets/profile.jpg";
 
 const LinkTree = () => {
   const links = [
     {
-      href: "#",
+      href: "https://t.me/mikabianchbot",
       icon: <Send className="w-5 h-5" />,
       label: "Telegram VIP",
       featured: true,
     },
     {
-      href: "#",
+      href: "https://t.me/mikaelabianch",
       icon: <Send className="w-5 h-5" />,
       label: "Telegram Prévias",
-    },
-    {
-      href: "#",
-      icon: <Instagram className="w-5 h-5" />,
-      label: "Instagram",
-    },
-    {
-      href: "#",
-      icon: <Camera className="w-5 h-5" />,
-      label: "OnlyFans",
-    },
-    {
-      href: "#",
-      icon: <Heart className="w-5 h-5" />,
-      label: "Privacy",
     },
   ];
 
@@ -50,11 +36,15 @@ const LinkTree = () => {
           className="mb-8 text-center opacity-0 animate-fade-in"
           style={{ animationDelay: '100ms' }}
         >
-          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-card/20 backdrop-blur-sm border-4 border-card/50 overflow-hidden flex items-center justify-center">
-            <Heart className="w-10 h-10 text-card" />
+          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-card/20 backdrop-blur-sm border-4 border-card/50 overflow-hidden">
+            <img 
+              src={profileImage} 
+              alt="Mikaely Bianch" 
+              className="w-full h-full object-cover"
+            />
           </div>
-          <h1 className="text-2xl font-bold text-foreground mb-1">Seu Nome</h1>
-          <p className="text-foreground/80 text-sm">Criadora de conteúdo ✨</p>
+          <h1 className="text-2xl font-bold text-foreground mb-1">Mikaely Bianch</h1>
+          <p className="text-foreground/80 text-sm">me veja daquele jeitinho ✨</p>
         </div>
 
         {/* Links */}
