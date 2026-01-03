@@ -1,15 +1,17 @@
 import { ReactNode } from "react";
 import { Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface LinkButtonProps {
   href: string;
   icon: ReactNode;
   label: string;
   featured?: boolean;
+  pulse?: boolean;
   delay?: number;
 }
 
-const LinkButton = ({ href, icon, label, featured = false, delay = 0 }: LinkButtonProps) => {
+const LinkButton = ({ href, icon, label, featured = false, pulse = false, delay = 0 }: LinkButtonProps) => {
   return (
     <div 
       className="relative w-full opacity-0 animate-fade-in"
@@ -27,12 +29,13 @@ const LinkButton = ({ href, icon, label, featured = false, delay = 0 }: LinkButt
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`
-          group flex items-center w-full bg-card rounded-lg px-6 py-4 
-          transition-all duration-300 ease-out
-          hover:scale-[1.02] hover:shadow-xl
-          ${featured ? 'shadow-lg animate-pulse-glow' : 'shadow-md hover:shadow-primary/20'}
-        `}
+        className={cn(
+          "group flex items-center w-full bg-card rounded-lg px-6 py-4",
+          "transition-all duration-300 ease-out",
+          "hover:scale-[1.02] hover:shadow-xl",
+          featured ? 'shadow-lg' : 'shadow-md hover:shadow-primary/20',
+          pulse && 'animate-[pulse_2s_ease-in-out_infinite]'
+        )}
       >
         <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
           {icon}
