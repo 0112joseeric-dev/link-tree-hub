@@ -1,4 +1,4 @@
-import { Send } from "lucide-react";
+import { Send, MessageCircle } from "lucide-react";
 import LinkButton from "./LinkButton";
 import backgroundImage from "@/assets/background.jpg";
 import profileImage from "@/assets/profile.jpg";
@@ -10,11 +10,17 @@ const LinkTree = () => {
       icon: <Send className="w-5 h-5" />,
       label: "Telegram VIP",
       featured: true,
+      pulse: true,
     },
     {
       href: "https://t.me/mikaelabianch",
       icon: <Send className="w-5 h-5" />,
       label: "Telegram Prévias",
+    },
+    {
+      href: "https://wa.me/5587996413671",
+      icon: <MessageCircle className="w-5 h-5" />,
+      label: "WhatsApp",
     },
   ];
 
@@ -56,6 +62,7 @@ const LinkTree = () => {
               icon={link.icon}
               label={link.label}
               featured={link.featured}
+              pulse={link.pulse}
               delay={200 + index * 100}
             />
           ))}
